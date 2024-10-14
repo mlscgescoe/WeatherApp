@@ -1,0 +1,40 @@
+// Specific Error handling
+try {
+    // Code that may throw an error
+} catch (TypeError) {
+    // Handle TypeError specifically
+} catch (ReferenceError) {
+    // Handle ReferenceError specifically
+}
+
+//Logging Errors:
+catch (error) {
+    console.error("An error occurred:", error.message);
+    // Optionally log the stack trace
+    console.error(error.stack);
+}
+
+//Graceful Degradation:
+try {
+    // Potentially problematic code
+} catch (error) {
+    // Fallback logic or user notification
+    alert("Something went wrong, please try again.");
+}
+//Re-throwing Errors:
+catch (error) {
+    console.error("Handling error at this level");
+    throw error; // Re-throw for further handling
+}
+
+//Using Finally Block:
+try {
+    // Code that may throw an error
+} catch (error) {
+    console.error("Error:", error);
+} finally {
+    // Cleanup code, if necessary
+}
+
+//Testing Error Handling:
+//Write tests to ensure that your error handling works as expected. Simulate different failure scenarios to verify that your application responds correctly.
